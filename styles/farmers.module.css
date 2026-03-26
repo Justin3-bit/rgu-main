@@ -1,0 +1,116 @@
+.page { padding: 3rem 0 5rem; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); }
+
+.cardTop {
+  background: linear-gradient(135deg, var(--earth-800), var(--earth-600));
+  padding: 1.4rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--gold-500);
+  color: var(--earth-900);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 2px solid rgba(200,168,75,0.45);
+}
+
+.name { font-family: var(--font-display); font-weight: 700; color: #fff; font-size: 1rem; }
+.region { font-size: 0.75rem; color: rgba(255,255,255,0.55); margin-top: 0.15rem; }
+
+.cardBody { padding: 1.25rem 1.5rem 1.5rem; }
+
+.bio {
+  font-size: 0.875rem;
+  color: var(--text-mid);
+  line-height: 1.65;
+  margin-bottom: 1rem;
+}
+
+.chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.85rem; }
+
+.chip {
+  background: var(--earth-100);
+  color: var(--earth-800);
+  border: 1px solid var(--border);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.2rem 0.7rem;
+  border-radius: 99px;
+}
+
+.crops { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+
+.cropTag {
+  font-size: 0.68rem;
+  background: rgba(200,168,75,0.1);
+  border: 1px solid rgba(200,168,75,0.3);
+  color: var(--earth-700);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.cta {
+  margin-top: 3.5rem;
+  background: var(--earth-700);
+  color: #fff;
+  border-radius: var(--radius-lg);
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.ctaTitle {
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 0.75rem;
+}
+
+.ctaSub {
+  color: rgba(255,255,255,0.65);
+  font-size: 0.95rem;
+  max-width: 460px;
+  margin: 0 auto 1.5rem;
+  line-height: 1.7;
+}
+
+.ctaLink {
+  display: inline-block;
+  background: var(--gold-500);
+  color: var(--earth-900);
+  font-weight: 700;
+  padding: 0.7rem 1.8rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  transition: background 0.15s;
+}
+
+.ctaLink:hover { background: var(--gold-300); }

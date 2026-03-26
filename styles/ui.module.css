@@ -1,0 +1,287 @@
+/* ── Buttons ───────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.15s, box-shadow 0.15s, opacity 0.15s;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.btnPrimary {
+  background: var(--earth-700);
+  color: #fff;
+  padding: 0.65rem 1.4rem;
+  font-size: 0.9rem;
+}
+.btnPrimary:hover:not(:disabled) { background: var(--earth-600); transform: translateY(-1px); }
+
+.btnGold {
+  background: var(--gold-500);
+  color: var(--earth-900);
+  padding: 0.65rem 1.4rem;
+  font-size: 0.9rem;
+}
+.btnGold:hover:not(:disabled) { background: var(--gold-300); transform: translateY(-1px); }
+
+.btnOutline {
+  background: transparent;
+  color: var(--earth-700);
+  border: 1.5px solid var(--earth-300);
+  padding: 0.6rem 1.4rem;
+  font-size: 0.9rem;
+}
+.btnOutline:hover:not(:disabled) { border-color: var(--earth-600); background: var(--earth-50); }
+
+.btnGhost {
+  background: transparent;
+  color: var(--earth-700);
+  padding: 0.5rem 0.9rem;
+  font-size: 0.875rem;
+}
+.btnGhost:hover:not(:disabled) { background: var(--earth-50); }
+
+.btnSm { padding: 0.4rem 0.85rem; font-size: 0.8rem; }
+.btnLg { padding: 0.8rem 2rem;    font-size: 1rem; }
+.btnFull { width: 100%; }
+.btnIcon { padding: 0.45rem; }
+
+/* ── Card ──────────────────────────────────────────────────── */
+.card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.cardHover {
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.cardHover:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+
+.cardHeader {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.cardTitle {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.cardBody { padding: 1.5rem; }
+.cardBodyNoPad { padding: 0; }
+
+/* ── Badge ─────────────────────────────────────────────────── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.65rem;
+  border-radius: 99px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+
+.badgeDefault    { background: var(--earth-700);  color: #fff; }
+.badgeSecondary  { background: var(--earth-100);  color: var(--earth-800); }
+.badgeGold       { background: var(--gold-500);   color: var(--earth-900); }
+.badgeProcessing { background: var(--amber-100);  color: #856404; }
+.badgeShipped    { background: var(--blue-100);   color: var(--blue-800); }
+.badgeDelivered  { background: var(--green-100);  color: var(--green-700); }
+.badgeCancelled  { background: var(--red-100);    color: var(--red-600); }
+.badgeLow        { background: #fff3cd;           color: #856404; }
+.badgeOut        { background: var(--red-100);    color: var(--red-600); }
+
+/* ── Form Elements ─────────────────────────────────────────── */
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-light);
+}
+
+.input,
+.textarea,
+.selectEl {
+  width: 100%;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.6rem 0.85rem;
+  font-size: 0.9rem;
+  font-family: var(--font-sans);
+  color: var(--text-dark);
+  background: var(--cream);
+  transition: border-color 0.15s, background 0.15s;
+  outline: none;
+}
+
+.input:focus,
+.textarea:focus,
+.selectEl:focus {
+  border-color: var(--earth-600);
+  background: #fff;
+}
+
+.input:disabled,
+.textarea:disabled {
+  background: var(--earth-50);
+  color: var(--text-light);
+  cursor: not-allowed;
+}
+
+.textarea { resize: vertical; min-height: 80px; }
+
+/* ── Table ─────────────────────────────────────────────────── */
+.tableWrap { overflow-x: auto; }
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.table th {
+  background: var(--earth-50);
+  color: var(--earth-600);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  padding: 0.65rem 1rem;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-mid);
+  vertical-align: middle;
+}
+
+.table tr:last-child td { border-bottom: none; }
+.table tbody tr:hover td { background: var(--earth-50); }
+
+/* ── Tabs ──────────────────────────────────────────────────── */
+.tabsList {
+  display: inline-flex;
+  background: var(--earth-100);
+  border-radius: var(--radius-sm);
+  padding: 4px;
+  gap: 2px;
+  flex-wrap: wrap;
+}
+
+.tabsTrigger {
+  background: none;
+  border: none;
+  border-radius: calc(var(--radius-sm) - 2px);
+  padding: 0.45rem 1rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--earth-700);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  white-space: nowrap;
+}
+
+.tabsTrigger:hover { background: rgba(255,255,255,0.5); }
+.tabsTriggerActive { background: var(--earth-700) !important; color: #fff !important; }
+
+.tabsContent { margin-top: 1.25rem; }
+
+/* ── Separator ─────────────────────────────────────────────── */
+.separator {
+  height: 1px;
+  background: var(--border);
+  margin: 0.75rem 0;
+}
+
+/* ── Avatar ────────────────────────────────────────────────── */
+.avatarRoot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.avatarFallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gold-500);
+  color: var(--earth-900);
+  font-family: var(--font-display);
+  font-weight: 700;
+}
+
+/* ── Section header ────────────────────────────────────────── */
+.sectionTag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--gold-600);
+  margin-bottom: 0.35rem;
+}
+
+.sectionTitle {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 800;
+  color: var(--earth-800);
+  line-height: 1.15;
+}
+
+.sectionSub {
+  color: var(--text-light);
+  margin-top: 0.6rem;
+  max-width: 520px;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+/* ── Empty state ───────────────────────────────────────────── */
+.emptyState {
+  text-align: center;
+  padding: 4rem 1rem;
+  color: var(--text-light);
+}
+
+.emptyIcon { font-size: 3rem; margin-bottom: 1rem; }
+
+/* ── Grid helpers ──────────────────────────────────────────── */
+.grid2 { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
+.grid3 { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.25rem; }
+.grid4 { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1.25rem; }
+

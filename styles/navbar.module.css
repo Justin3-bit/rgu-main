@@ -1,0 +1,137 @@
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--earth-700);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  gap: 2px;
+  cursor: pointer;
+}
+
+.brandName {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: var(--gold-300);
+  letter-spacing: -0.02em;
+}
+
+.brandSub {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: rgba(255,255,255,0.4);
+  font-weight: 400;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.link {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.7);
+  padding: 0.45rem 0.9rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: background 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+
+.link:hover,
+.linkActive {
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.cartBtn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--gold-500);
+  border: none;
+  color: var(--earth-900);
+  padding: 0.45rem 1.1rem;
+  border-radius: 99px;
+  font-weight: 700;
+  font-size: 0.875rem;
+  transition: background 0.15s, transform 0.15s;
+}
+
+.cartBtn:hover {
+  background: var(--gold-300);
+  transform: translateY(-1px);
+}
+
+.cartCount {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: var(--earth-900);
+  color: #fff;
+  font-size: 0.6rem;
+  font-weight: 700;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--gold-500);
+}
+
+.avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--gold-500);
+  color: var(--earth-900);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 2px solid rgba(200,168,75,0.4);
+  transition: border-color 0.15s;
+}
+
+.avatar:hover { border-color: var(--gold-500); }
+
+.signOutBtn {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.6);
+  padding: 0.3rem;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  transition: color 0.15s;
+}
+
+.signOutBtn:hover { color: #fff; }
