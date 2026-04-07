@@ -132,7 +132,7 @@ export default async function HomePage() {
                     <div className={s.farmerMiniAvatar}>{f.photo_initials}</div>
                     <div>
                       <div className={s.farmerMiniName}>{f.name}</div>
-                      <div className={s.farmerMiniRegion}>📍 {f.region}</div>
+                      <div className={s.farmerMiniRegion}> {f.region}</div>
                     </div>
                   </div>
                   <div className={s.farmerMiniBody}>

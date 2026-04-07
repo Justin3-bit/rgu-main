@@ -61,7 +61,7 @@ export default function ShopClient({ products, categories }) {
 
         {filtered.length === 0 ? (
           <div className={u.emptyState}>
-            <div className={u.emptyIcon}>🌿</div>
+            <div className={u.emptyIcon}></div>
             <p>No products in this category.</p>
           </div>
         ) : (

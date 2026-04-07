@@ -25,7 +25,7 @@ export default function LoginPage() {
     })
     setLoading(false)
     if (error) { toast.error(error.message); return }
-    toast.success("Welcome back! 👋")
+    toast.success("Welcome back! ")
     router.push("/")
     router.refresh()
   }

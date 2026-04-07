@@ -27,7 +27,7 @@ export default async function FarmersPage() {
                 <div className={s.avatar}>{f.photo_initials}</div>
                 <div>
                   <div className={s.name}>{f.name}</div>
-                  <div className={s.region}>📍 {f.region}</div>
+                  <div className={s.region}> {f.region}</div>
                 </div>
               </div>
               <div className={s.cardBody}>

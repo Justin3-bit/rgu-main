@@ -43,6 +43,7 @@ create table if not exists public.products (
   unit        text not null default 'kg',
   stock       int not null default 0,
   emoji       text default '🌿',
+  image_url   text,
   active      boolean not null default true,
   created_at  timestamptz not null default now()
 );
@@ -194,6 +195,4 @@ insert into public.products (farmer_id, name, description, category, price, unit
 on conflict do nothing;
 
 
--- ── Add image_url column to products ────────────────────────
--- Run this if your products table already exists:
--- alter table public.products add column if not exists image_url text;
+

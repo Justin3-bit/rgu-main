@@ -34,6 +34,24 @@ export default function CheckoutClient({ user, profile }) {
   async function placeOrder() {
     setLoading(true)
     try {
+      // Validate stock before creating anything
+      const { data: currentStock, error: sErr } = await supabase
+        .from("products")
+        .select("id, name, stock")
+        .in("id", items.map(i => i.id))
+      if (sErr) throw sErr
+
+      const outOfStock = items.filter(item => {
+        const product = currentStock.find(p => p.id === item.id)
+        return !product || product.stock < item.qty
+      })
+
+      if (outOfStock.length > 0) {
+        toast.error(`Not enough stock for: ${outOfStock.map(i => i.name).join(", ")}`)
+        setLoading(false)
+        return
+      }
+
       const { data: order, error: oErr } = await supabase
         .from("orders")
         .insert({
@@ -240,7 +258,7 @@ export default function CheckoutClient({ user, profile }) {
                   <div style={{ display: "flex", gap: "0.75rem", marginTop: "1.25rem" }}>
                     <button className={`${u.btn} ${u.btnOutline}`} onClick={() => setStep(1)}>← Back</button>
                     <button className={`${u.btn} ${u.btnGold}`} onClick={placeOrder} disabled={loading}>
-                      {loading ? "Placing order…" : "Place Order 🌿"}
+                      {loading ? "Placing order…" : "Place Order "}
                     </button>
                   </div>
                 </div>

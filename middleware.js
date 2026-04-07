@@ -1,21 +1,27 @@
-import { createClient } from '@supabase/supabase-js'
+import { createServerClient } from '@supabase/ssr'
 import { NextResponse } from 'next/server'
 
 export async function middleware(request) {
-  const response = NextResponse.next()
+  let supabaseResponse = NextResponse.next({ request })
 
-  // Pull the session token from cookies
-  const cookieHeader = request.cookies
-    .getAll()
-    .map(({ name, value }) => `${name}=${value}`)
-    .join('; ')
-
-  const supabase = createClient(
+  const supabase = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
     {
-      auth: { persistSession: false, detectSessionInUrl: false },
-      global: { headers: { cookie: cookieHeader } },
+      cookies: {
+        getAll() {
+          return request.cookies.getAll()
+        },
+        setAll(cookiesToSet) {
+          cookiesToSet.forEach(({ name, value, options }) =>
+            request.cookies.set(name, value, options)
+          )
+          supabaseResponse = NextResponse.next({ request })
+          cookiesToSet.forEach(({ name, value, options }) =>
+            supabaseResponse.cookies.set(name, value, options)
+          )
+        },
+      },
     }
   )
 
@@ -44,7 +50,7 @@ export async function middleware(request) {
     }
   }
 
-  return response
+  return supabaseResponse
 }
 
 export const config = {
