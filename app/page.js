@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { createClient } from "@/lib/supabase/server"
-import { Users, Leaf, Package, TrendingUp, ShieldCheck, Sprout } from "lucide-react"
+import { Users, Leaf, Package, TrendingUp, Sprout } from "lucide-react"
 import s from "@/styles/home.module.css"
 import u from "@/styles/ui.module.css"
 
@@ -10,11 +10,10 @@ export default async function HomePage() {
   const { data: products } = await supabase.from("products").select("*, farmers(name)").eq("active", true).limit(4).order("id")
 
   const missions = [
-    { icon: Users,       title: "Farmer First",         desc: "Every product sold ensures the farmer receives a fair, transparent share — no middlemen inflating prices." },
+    { icon: Users,       title: "Farmer First",         desc: "Every product sold ensures the farmer receives a fair, transparent share , no inflated prices." },
     { icon: Leaf,        title: "Sustainable Practices", desc: "Our farmers commit to regenerative methods that protect soil health and local ecosystems for future generations." },
     { icon: Package,     title: "Direct Outlet",         desc: "GLH provides a direct marketplace so farmers can sell produce without the uncertainty of commodity markets." },
-    { icon: TrendingUp,  title: "Stock Visibility",      desc: "Real-time stock management ensures customers always know what's available and farmers can plan accordingly." },
-    { icon: ShieldCheck, title: "Full Traceability",     desc: "Every product is linked to a named farmer and farm. You always know exactly where your food comes from." },
+    { icon: TrendingUp,  title: "Stock Visibility",      desc: "Realtime stock management ensures customers always know what's available and farmers can plan accordingly." },
     { icon: Sprout,      title: "Community Impact",      desc: "Profits are reinvested into farmer training, sustainable infrastructure, and co-operative development." },
   ]
 
@@ -29,32 +28,25 @@ export default async function HomePage() {
             From Our Farms<br />
             <span className={s.heroAccent}>To Your Table</span>
           </h1>
-          <p className={s.heroSub}>
-            GLH Co-operative connects smallholder farmers across the UK with consumers who care.
+          <p className={s.heroSub} style ={{fontFamily: "system-ui"}}>
+            GLH Co-operative connects smallholder farmers across the UK with customers.
           </p>
-          <div className={s.heroActions}>
+          <div className={s.heroActions} style ={{fontFamily: "system-ui"}}>
             <Link href="/shop">
               <button className={`${u.btn} ${u.btnGold} ${u.btnLg}`}>Shop Fresh Produce →</button>
             </Link>
             <Link href="/farmers">
-              <button className={`${u.btn} ${u.btnOutline} ${u.btnLg}`} style={{ borderColor: "rgba(255,255,255,0.35)", color: "#fff" }}>
+              <button className={`${u.btn} ${u.btnOutline} ${u.btnLg}`} style={{ borderColor: "rgba(255,255,255,0.35)", color: "#000000" }}>
                 Meet the Farmers
               </button>
             </Link>
           </div>
-          <div className={s.stats}>
-            {[["4","Partner Farmers"],["12+","Crop Varieties"],["4","UK Regions"],["100%","British Grown"]].map(([n, l]) => (
-              <div key={l}>
-                <div className={s.statNum}>{n}</div>
-                <div className={s.statLabel}>{l}</div>
-              </div>
-            ))}
-          </div>
+          
         </div>
       </section>
 
       {/* Mission */}
-      <section className={s.missionSection}>
+      <section className={s.missionSection} style ={{fontFamily: "system-ui"}}>
         <div className="container">
           <div style={{ textAlign: "center", maxWidth: 560, margin: "0 auto 2.5rem" }}>
             <div className={u.sectionTag}>Who We Are</div>

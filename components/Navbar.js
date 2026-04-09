@@ -30,7 +30,7 @@ export default function Navbar({ user, profile }) {
   ]
 
   return (
-    <nav className={s.nav}>
+    <nav className={s.nav} style ={{fontFamily: "system-ui"}}>
       <div className={`container ${s.inner}`}>
 
         <Link href="/" className={s.brand}>
